@@ -37,8 +37,9 @@ public class StudentController {
 
     @Operation(description = "Create Student in CRM System")
     @PostMapping
-    public void createStudent(@RequestBody StudentDTO studentDTO) {
+    public StudentDTO createStudent(@RequestBody StudentDTO studentDTO) {
         studentService.createStudent(studentDTO);
+        return studentDTO;
     }
 
 }
